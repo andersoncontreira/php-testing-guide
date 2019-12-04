@@ -33,9 +33,20 @@ Project for training teammates with unit tests development improvement.
 * Configuring PHP Storm to execute test
 
 ## Prerequisites
-* PHP 5.6 at least
+* PHP 7.1 at least;
+* PHPUnit 7.*;
+* PDO;
+* mysql;
+* sqlite3;
 
 ## Installation
+### Installing PHP Modules
+```
+sudo apt install php7.1-mysql
+sudo apt install php7.1-sqlite3 
+```
+
+### Installing packages and dependencies 
 To check this project running you can clone it in you workspace and execute the test with `composer`.   
 ```
 composer install

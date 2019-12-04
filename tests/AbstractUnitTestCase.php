@@ -4,6 +4,7 @@
 namespace Training\Tests;
 
 
+use PHPUnit\Framework\TestCase;
 use Training\Logger\ConsoleLogger;
 use Training\Tests\Helpers\DatabaseHelper;
 
@@ -14,7 +15,7 @@ use Training\Tests\Helpers\DatabaseHelper;
  *
  * @package Training\Tests
  */
-class AbstractUnitTestCase extends \PHPUnit_Framework_TestCase
+class AbstractUnitTestCase extends TestCase
 {
     /**
      * @var \Training\Logger\ConsoleLogger

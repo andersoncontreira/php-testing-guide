@@ -10,7 +10,7 @@ use Training\Utils\ObjectUtil;
  *
  * @package Training\Entities
  */
-class Subscription
+class Subscription implements \JsonSerializable
 {
     /**
      * @var integer
@@ -239,4 +239,11 @@ class Subscription
         return ObjectUtil::toJson($this);
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function jsonSerialize()
+    {
+        return ObjectUtil::toJson($this);
+    }
 }

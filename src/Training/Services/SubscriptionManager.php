@@ -5,13 +5,16 @@ namespace Training\Services;
 
 
 use Training\Entities\Subscription;
-use Training\Exceptions\ServiceException;
 use Training\Logger\ConsoleLogger;
 use Training\Repositories\SubscriptionRepository;
 use Training\Services\Subscription\SubscriptionService;
-use Training\Services\Subscription\UnsubscriptionService;
+use Training\Services\Subscription\UpdateSubscriptionService;
 use Training\Validators\SubscriptionValidator;
 
+/**
+ * Class SubscriptionManager
+ * @package Training\Services
+ */
 class SubscriptionManager
 {
 
@@ -66,25 +69,53 @@ class SubscriptionManager
                 $this->exception = $service->getException();
             }
 
-        } catch (ServiceException $exception) {
+        } catch (\Exception $exception) {
             $this->exception = $exception;
         }
 
         return $result;
     }
 
-    public function unsubscribe() {
-        $service = new UnsubscriptionService();
-        $service->execute();
+    /**
+     * @param $subscription
+     * @return bool
+     */
+    public function updateSubscription(Subscription $subscription)
+    {
+        $result = false;
+
+        try {
+            $service = new UpdateSubscriptionService($this->repository, $this->logger);
+            $service->setSubscription($subscription);
+
+            if ($service->validate($subscription)) {
+                $result = $service->execute();
+            }
+
+            if ($result == false) {
+                $this->exception = $service->getException();
+            }
+        } catch (\Exception $exception) {
+            $this->exception = $exception;
+        }
+
+        return $result;
+    }
+
+
+
+    public function unsubscribe(Subscription $subscription) {
+//        $service = new UnsubscriptionService($this->repository, $this->logger);
+//        $service->setSubscription($subscription);
+//        $service->execute();
     }
 
     /**
      * @return \Training\Validators\SubscriptionValidator
      */
-    public
-    function getValidator()
+    public function getValidator()
     {
-        return $this->validator;
+        return new SubscriptionValidator();
     }
 
     /**
@@ -95,9 +126,7 @@ class SubscriptionManager
         return $this->exception;
     }
 
-    public function updateSubscription($subscription)
-    {
-    }
+
 
 
 }

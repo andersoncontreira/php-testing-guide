@@ -28,7 +28,7 @@ class AddressValidator extends AbstractValidator
                 NotEmptyRule::class, new MinLengthRule(5)
             ],
             'streetNumber' => [
-                NotEmptyRule::class, new MinLengthRule(1)
+                new MinLengthRule(1)
             ],
             'cityName' => [
                 NotEmptyRule::class, new MinLengthRule(5)

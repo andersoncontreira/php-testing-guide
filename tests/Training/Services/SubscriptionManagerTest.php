@@ -110,7 +110,12 @@ class SubscriptionManagerTest extends AbstractUnitTestCase
      * @dataProvider getData
      */
     public function testUpdateSubscription(Subscription $subscription) {
-        $this->manager->updateSubscription($subscription);
+
+        $this->logger->info(sprintf("Testing the method %s with parameters: %s", __METHOD__, $subscription));
+
+        $result = $this->manager->updateSubscription($subscription);
+
+        self::assertTrue($result);
     }
 
 

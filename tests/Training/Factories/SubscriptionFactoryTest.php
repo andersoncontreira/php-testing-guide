@@ -56,7 +56,7 @@ class SubscriptionFactoryTest extends AbstractUnitTestCase
 
         if ($name == 'name') {
             $this->logger->info("Cenário ignorado...");
-            return;
+            $this->markTestSkipped();
         }
 
         $data = [

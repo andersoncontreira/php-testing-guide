@@ -3,11 +3,12 @@
 
 namespace Training\Services\Subscription;
 
+
 /**
- * Class UnsubscriptionService
+ * Class UpdateSubscriptionService
  * @package Training\Services\Subscription
  */
-class UnsubscriptionService extends AbstractSubscriptionService
+class UpdateSubscriptionService extends AbstractSubscriptionService
 {
 
     /**
