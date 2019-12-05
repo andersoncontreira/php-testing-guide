@@ -1,5 +1,4 @@
-.idea/*
-
+/.idea/*
+/target/*
 /vendor/
-
 training.db
