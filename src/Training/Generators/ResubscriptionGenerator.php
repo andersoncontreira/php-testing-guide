@@ -152,7 +152,34 @@ class ResubscriptionGenerator
                                 echo self::MONDAY;
                             break;
                         default:
+                            $time = date("Hi");
+                            $day = date("N"); //sets a numeric value monday = 1 etc
                             echo self::MONDAY;
+
+
+                            switch ($day) {
+                                case 1:
+                                    if ($time < 1000)
+                                    {echo "Your order will ship today";}
+                                    else
+                                    {echo "Your order will ship tomorrow";}
+                                    break;
+                                case 2:
+                                    if ($time < 1000)
+                                    {echo "Your order will ship today";}
+                                    else
+                                    {echo "Your order will ship tomorrow";}
+                                    break;
+                                case 3:
+                                    if ($time < 1000)
+                                    {echo "Your order will ship today";}
+                                    else
+                                    {echo "Your order will ship Monday";}
+                                    break;
+                                default:
+                                    echo "Your order will ship Monday"; //if none of the above match
+                            }
+
                             break;
                     }
                 }
