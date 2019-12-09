@@ -63,6 +63,15 @@ or
 php ./vendor/phpunit/phpunit/phpunit --bootstrap ./tests/bootstrap.php --configuration ./phpunit.xml
 ```
 
+## Running tests with coverage
+```
+composer test-coverage
+```
+or 
+```
+php ./vendor/phpunit/phpunit/phpunit --bootstrap ./tests/bootstrap.php --configuration ./phpunit.xml --coverage-clover ./target/coverage.xml
+```
+
 ## Concepts covered
 ### XML configuration
 Describe here this content...
