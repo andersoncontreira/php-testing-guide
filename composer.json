@@ -32,7 +32,7 @@
   "scripts": {
     "test": "php ./vendor/phpunit/phpunit/phpunit --bootstrap ./tests/bootstrap.php --configuration ./phpunit.xml",
     "test-coverage": "php ./vendor/phpunit/phpunit/phpunit --bootstrap ./tests/bootstrap.php --configuration ./phpunit.xml --coverage-clover ./target/coverage.xml",
-    "test-coverage-codacy": "export $(cat .env | xargs) && php ./vendor/bin/codacycoverage clover ./target/coverage.xml",
+    "test-coverage-codacy": "export $(cat codacy.env | xargs) && php ./vendor/bin/codacycoverage clover ./target/coverage.xml",
     "test-validator-rules": "php ./vendor/phpunit/phpunit/phpunit --bootstrap ./tests/bootstrap.php --configuration ./phpunit.xml --testsuite validators"
   }
 }

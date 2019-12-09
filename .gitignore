@@ -2,4 +2,4 @@
 /target/*
 /vendor/
 training.db
-.env
+codacy.env
