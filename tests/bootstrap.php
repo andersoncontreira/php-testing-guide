@@ -14,6 +14,13 @@ $dir = dirname(__DIR__);
 define("ROOT_DIR", $dir);
 
 /**
+ * Carrega as variáveis de ambiente
+ */
+$dotenv = Dotenv\Dotenv::createImmutable($dir);
+$dotenv->load();
+
+
+/**
  * Composer autoload
  */
 include_once ($dir.'/vendor/autoload.php');
