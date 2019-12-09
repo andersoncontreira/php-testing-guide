@@ -16,7 +16,7 @@ use Training\VOs\Address;
  *
  * @package Training\Generators
  */
-class SubscriptionGenerator
+class ResubscriptionGenerator
 {
 
     public static function getFaker() {
