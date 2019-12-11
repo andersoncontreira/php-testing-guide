@@ -3,6 +3,9 @@ Project for training teammates with unit tests development improvement.
 
 <!-- badges -->
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)]()
+[![Build Status](https://travis-ci.org/andersoncontreira/training-unit-test-php.svg?branch=master)](https://travis-ci.org/andersoncontreira/training-unit-test-php)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ab2e2967641e408498e52117c3e13f26)](https://www.codacy.com/manual/andersoncontreira/training-unit-test-php?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=andersoncontreira/training-unit-test-php&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/ab2e2967641e408498e52117c3e13f26)](https://www.codacy.com/manual/andersoncontreira/training-unit-test-php?utm_source=github.com&utm_medium=referral&utm_content=andersoncontreira/training-unit-test-php&utm_campaign=Badge_Coverage)
 
 ## Concepts covered
 * Basic configuration;
@@ -19,15 +22,16 @@ Project for training teammates with unit tests development improvement.
 * Data providers;
 * Annotations;
 * Assertions;
+* Code coverage;
 * Running tests with phpunit;
 * Running tests with composer;
+* Logging (test results and coverage);
+* Extending the PHPUnit test cases;
 * Practical examples;
 
 ## Concepts not covered
 * Command line options;
-* Code coverage;
-* Logging (test results and coverage);
-* Extending the PHPUnit test cases;
+
 
 ## Others 
 * Configuring PHP Storm to execute test
