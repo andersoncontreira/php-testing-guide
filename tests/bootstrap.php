@@ -16,8 +16,8 @@ define("ROOT_DIR", $dir);
 /**
  * Carrega as variáveis de ambiente
  */
-$dotenv = Dotenv\Dotenv::createImmutable($dir);
-$dotenv->load();
+//$dotenv = Dotenv\Dotenv::createImmutable($dir);
+//$dotenv->load();
 
 
 /**
