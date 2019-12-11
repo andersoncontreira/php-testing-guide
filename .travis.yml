@@ -4,8 +4,6 @@ language: php
 # Do not forget to provide your CODACY_PROJECT_TOKEN as described in https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings
 
 php:
-  - 5.6
-  - 7.0
   - 7.1
   - 7.2
   # - hhvm
