@@ -16,9 +16,13 @@ use Training\VOs\Address;
  *
  * @package Training\Generators
  */
-class SubscriptionGenerator
+class ResubscriptionGenerator
 {
 
+    const TODAY = '<p>your order will ship today</p>';
+    const TOMORROW = '<p>your order will ship tomorrow</p>';
+    const MONDAY = '<p>your order will ship monday</p>';
+    
     public static function getFaker() {
         $faker = Factory::create();
         $faker->addProvider(new \Faker\Provider\pt_BR\Person($faker));
@@ -115,5 +119,85 @@ class SubscriptionGenerator
         $subscription->setAddress($address);
 
         return $subscription;
+    }
+
+    public function xitaMethod()
+    {
+
+        $message = "";
+        $current_time = date("H:i");
+        $d = date("N");
+
+        if ($d > 3) {
+            $message = ('<p>your order will ship monday</p>');
+        }
+        else {
+
+            if ($d < 4 && $current_time >= "10:00") {
+                if ($d = 1 && $current_time <= "10:00" || $d = 2 && $current_time <= "10:00") {
+                    $message = ('<p>your order will ship today.</p>');
+                    $time = date('Hi');
+                    switch (date('l')) {
+                        case 'Monday':
+                        case 'Tuesday':
+                            if ($time < 1000)
+                                echo self::TODAY;
+                            else
+                                echo self::TOMORROW;
+                            break;
+                        case 'Wednesday':
+                            if ($time < 1000)
+                                echo self::TODAY;
+                            else
+                                echo self::MONDAY;
+                            break;
+                        default:
+                            $time = date("Hi");
+                            $day = date("N"); //sets a numeric value monday = 1 etc
+                            echo self::MONDAY;
+
+
+                            switch ($day) {
+                                case 1:
+                                    if ($time < 1000)
+                                    {echo "Your order will ship today";}
+                                    else
+                                    {echo "Your order will ship tomorrow";}
+                                    break;
+                                case 2:
+                                    if ($time < 1000)
+                                    {echo "Your order will ship today";}
+                                    else
+                                    {echo "Your order will ship tomorrow";}
+                                    break;
+                                case 3:
+                                    if ($time < 1000)
+                                    {echo "Your order will ship today";}
+                                    else
+                                    {echo "Your order will ship Monday";}
+                                    break;
+                                default:
+                                    echo "Your order will ship Monday"; //if none of the above match
+                            }
+
+                            break;
+                    }
+                }
+            }
+
+            if ($d = 1 && $current_time >= "10:01" || $d = 2 && $current_time >= "10:01") {
+                $message = ('<p>your order will ship tomorrow.</p>');
+
+                if ($d > 10) {
+                    $message =  "xita";
+                }
+            }
+
+            if ($d = 3 && $current_time <= "10:00") {
+                $message = ('<p>your order will ship monday.</p>');
+            }
+
+        }
+
     }
 }
